@@ -1,0 +1,784 @@
+\hypertarget{class_b_s_t}{}\section{B\+ST$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$ Class Template Reference}
+\label{class_b_s_t}\index{B\+S\+T$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$@{B\+S\+T$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$}}
+
+
+This class implements a generic Binary Search Tree.  
+
+
+
+
+{\ttfamily \#include $<$bst.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node}
+\begin{DoxyCompactList}\small\item\em Represents a single binary search tree node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::pair$<$ Key\+Type, Value\+Type $>$ \hyperlink{class_b_s_t_a0aa9307cbee74945dbbbf659c398d4a1}{node\+\_\+content\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Represents a pair of key-\/value elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_b_s_t_a092e33c1b889b35fb95afda49ca1191c}{B\+ST} (const Key\+Type\+Less \&comp=Key\+Type\+Less())
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_b_s_t_a9c3d9ab6deb17f9dc3fa19d01a46f8e3}{B\+ST} (const \hyperlink{class_b_s_t}{B\+ST} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_b_s_t_a99b5f3bb6438a7cdba827dc77d1d4ce5}{$\sim$\+B\+ST} ()
+\begin{DoxyCompactList}\small\item\em Regular destructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Input\+Itr $>$ }\\\hyperlink{class_b_s_t_a8811bb87594111984e2ae68a88586af2}{B\+ST} (Input\+Itr first, Input\+Itr last, const Key\+Type\+Less \&comp=Key\+Type\+Less())
+\begin{DoxyCompactList}\small\item\em The range constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_b_s_t_ab07b4e6d6818494bbc892df89ee4daad}{B\+ST} (std\+::initializer\+\_\+list$<$ \hyperlink{class_b_s_t_a0aa9307cbee74945dbbbf659c398d4a1}{node\+\_\+content\+\_\+type} $>$ init, const Key\+Type\+Less \&comp=Key\+Type\+Less())
+\begin{DoxyCompactList}\small\item\em The intializer list constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_b_s_t}{B\+ST} \& \hyperlink{class_b_s_t_a777c36ccd3b24f144e0603f20f5eac9d}{operator=} (const \hyperlink{class_b_s_t}{B\+ST} \&rhs)
+\begin{DoxyCompactList}\small\item\em The copy assignment operator. \end{DoxyCompactList}\item 
+\hyperlink{class_b_s_t}{B\+ST} \& \hyperlink{class_b_s_t_abcafcb893066444795e8145684011457}{operator=} (std\+::initializer\+\_\+list$<$ \hyperlink{class_b_s_t_a0aa9307cbee74945dbbbf659c398d4a1}{node\+\_\+content\+\_\+type} $>$ ilist)
+\begin{DoxyCompactList}\small\item\em The initializer list assignment operator. \end{DoxyCompactList}\item 
+const Value\+Type \& \hyperlink{class_b_s_t_a262042430a5671f2964ec55fd0db5887}{find\+\_\+min} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns the value associated with the smallest key. \end{DoxyCompactList}\item 
+const Value\+Type \& \hyperlink{class_b_s_t_a1610824df7207dd077fec30b82174a9e}{find\+\_\+max} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns the value associated with the largest key. \end{DoxyCompactList}\item 
+bool \hyperlink{class_b_s_t_a959aa07758e3ff26890e37db2a31b6b2}{contains} (const Key\+Type \&key) const 
+\begin{DoxyCompactList}\small\item\em Checks whether the \hyperlink{class_b_s_t}{B\+ST} contains a given key. \end{DoxyCompactList}\item 
+bool \hyperlink{class_b_s_t_a582ec5f3bc333f1e9c1deed3526e6a55}{empty} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns true if the \hyperlink{class_b_s_t}{B\+ST} is empty, or false otherwise. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{class_b_s_t_a95dafd989628a5cf95f8e82151bbb432}{size} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns the number of key-\/value elements stored in the \hyperlink{class_b_s_t}{B\+ST}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_b_s_t_ad969e54369b6edee09f68b2b79a22f08}{retrieve} (const Key\+Type \&key, Value\+Type \&value) const 
+\begin{DoxyCompactList}\small\item\em Retrieves in {\ttfamily value} the value associated with the provided key. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Unary\+Function $>$ }\\void \hyperlink{class_b_s_t_afafd8425898de634afe1d229420cfbb8}{preorder} (const Unary\+Function \&visit) const 
+\begin{DoxyCompactList}\small\item\em Traverses and visits each \hyperlink{class_b_s_t}{B\+ST} node in {\bfseries preorder} fashion. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Unary\+Function $>$ }\\void \hyperlink{class_b_s_t_a938be48246fd9b0b81e64d111f2e1a5d}{postorder} (const Unary\+Function \&visit) const 
+\begin{DoxyCompactList}\small\item\em Traverses and visits each \hyperlink{class_b_s_t}{B\+ST} node in {\bfseries postorder} fashion. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Unary\+Function $>$ }\\void \hyperlink{class_b_s_t_a46608ca07862f7f13cf3520ec6ade82d}{inorder} (const Unary\+Function \&visit) const 
+\begin{DoxyCompactList}\small\item\em Traverses and visits each \hyperlink{class_b_s_t}{B\+ST} node in {\bfseries inorder} fashion. \end{DoxyCompactList}\item 
+void \hyperlink{class_b_s_t_a6ffadf800779b0f1b1a9742a3bc5cf66}{clear} (void)
+\begin{DoxyCompactList}\small\item\em Removes all the elements from the \hyperlink{class_b_s_t}{B\+ST}. \end{DoxyCompactList}\item 
+void \hyperlink{class_b_s_t_a809a130ceaa2dbb3a2b077f321675593}{insert} (const Key\+Type \&key, const Value\+Type \&value)
+\begin{DoxyCompactList}\small\item\em Inserts a new pair $<${\ttfamily key},{\ttfamily value}$>$ in the tree. \end{DoxyCompactList}\item 
+void \hyperlink{class_b_s_t_aa9f0f207322311366b9b014755a798ab}{remove} (const Key\+Type \&)
+\begin{DoxyCompactList}\small\item\em Removes from the \hyperlink{class_b_s_t}{B\+ST} a node containing the requested key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_b_s_t_a2caab48e5c6f1400f7b9ae2e11fb1680}{insert} (\hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node} $\ast$\&root, const Key\+Type \&key, const Value\+Type \&value)
+\begin{DoxyCompactList}\small\item\em Inserts a new pair $<${\ttfamily key},{\ttfamily value}$>$ in the tree. \end{DoxyCompactList}\item 
+void \hyperlink{class_b_s_t_ab3369784d746d15731edf741729f15ad}{remove} (\hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node} $\ast$\&root, const Key\+Type \&key)
+\begin{DoxyCompactList}\small\item\em Removes from the \hyperlink{class_b_s_t}{B\+ST} a node containing the requested key. \end{DoxyCompactList}\item 
+bool \hyperlink{class_b_s_t_a3c014718dd218e2ca758af266cc0b787}{contains} (const \hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node} $\ast$root, const Key\+Type \&key) const 
+\begin{DoxyCompactList}\small\item\em Checks whether the \hyperlink{class_b_s_t}{B\+ST} contains a given key. \end{DoxyCompactList}\item 
+bool \hyperlink{class_b_s_t_ad4e63b5360a5252606dece4c5972c36d}{retrieve} (const \hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node} $\ast$root, const Key\+Type \&key, Value\+Type \&value) const 
+\begin{DoxyCompactList}\small\item\em Retrieves in {\ttfamily value} the value associated with the provided key. \end{DoxyCompactList}\item 
+void \hyperlink{class_b_s_t_a55ef77647f785480d292d2315550f734}{clear} (\hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node} $\ast$\&root)
+\begin{DoxyCompactList}\small\item\em Removes all the elements from the \hyperlink{class_b_s_t}{B\+ST}. \end{DoxyCompactList}\item 
+\hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node} $\ast$ \hyperlink{class_b_s_t_af21ef870def521a698f5ad9672badd1f}{clone} (const \hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node} $\ast$root)
+\begin{DoxyCompactList}\small\item\em Creates a copy of a \hyperlink{class_b_s_t}{B\+ST} tree. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Unary\+Function $>$ }\\void \hyperlink{class_b_s_t_a10b4da6797656b7155f92fa7e2be3f1d}{preorder} (const \hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node} $\ast$root, const Unary\+Function \&visit) const 
+\begin{DoxyCompactList}\small\item\em Traverses and visits each \hyperlink{class_b_s_t}{B\+ST} node in {\bfseries preorder} fashion. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Unary\+Function $>$ }\\void \hyperlink{class_b_s_t_a11b5bd16742a542b361eebe5f2baa310}{postorder} (const \hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node} $\ast$root, const Unary\+Function \&visit) const 
+\begin{DoxyCompactList}\small\item\em Traverses and visits each \hyperlink{class_b_s_t}{B\+ST} node in {\bfseries postorder} fashion. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Unary\+Function $>$ }\\void \hyperlink{class_b_s_t_abbfbc935cb31754a1715cca4490994f8}{inorder} (const \hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node} $\ast$root, const Unary\+Function \&visit) const 
+\begin{DoxyCompactList}\small\item\em Traverses and visits each \hyperlink{class_b_s_t}{B\+ST} node in {\bfseries inorder} fashion. \end{DoxyCompactList}\item 
+const \hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node} $\ast$ \hyperlink{class_b_s_t_a2da99953436debe2868f93bd18398b11}{get\+\_\+smallest\+\_\+leaf} (const \hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node} $\ast$root) const 
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the \hyperlink{class_b_s_t}{B\+ST} node with the smallest key value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_b_s_t_1_1_b_t_node}{B\+T\+Node} $\ast$ \hyperlink{class_b_s_t_af2a361060692deacc5be429288eece96}{m\+\_\+root}
+\begin{DoxyCompactList}\small\item\em Pointer to the root of the entire tree. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{class_b_s_t_a38f358a38c855ebc8bd866f6ae96aa5a}{m\+\_\+n\+\_\+nodes}
+\begin{DoxyCompactList}\small\item\em The count of nodes stored in the tree. \end{DoxyCompactList}\item 
+Key\+Type\+Less \hyperlink{class_b_s_t_a7a6d8e3ed3109602f468ef20d03f733c}{m\+\_\+key\+\_\+less}
+\begin{DoxyCompactList}\small\item\em The key comparator function object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{class_b_s_t_aaf95a8d45e30cd664017a788b0c5193b}{operator$<$$<$} (std\+::ostream \&os\+\_\+, const \hyperlink{class_b_s_t}{B\+ST} \&root\+\_\+)
+\begin{DoxyCompactList}\small\item\em Prints out an ascii tree-\/bar representation of the \hyperlink{class_b_s_t}{B\+ST}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Key\+Type, typename Value\+Type, typename Key\+Type\+Less = std\+::less$<$\+Key\+Type$>$$>$\\*
+class B\+S\+T$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$}
+
+This class implements a generic Binary Search Tree. 
+
+\hyperlink{class_b_s_t}{B\+ST} is a sorted associative container that stores key-\/value pairs with unique keys. Keys are sorted by using the comparison function Key\+Type\+Less. The elements of the container (nodes) are structured as a Binary Search Tree (\hyperlink{class_b_s_t}{B\+ST}).
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Key\+Type} & The type of the key associated with the data. \\
+\hline
+{\em Value\+Type} & The type of the data to be stored in the tree. \\
+\hline
+{\em Key\+Type\+Less} & A function object that compares two keys and returns true if the first argument of the call appears first than the second argument in the strict weak ordering relation induced by the Key\+Type, and false otherwise.\\
+\hline
+\end{DoxyTemplParams}
+By default we try to instantiate a S\+TL\textquotesingle{}s std\+::less$<$\+Key\+Type$>$ function object if one is available for the Key\+Type provided. 
+
+\subsection{Member Typedef Documentation}
+\index{B\+ST@{B\+ST}!node\+\_\+content\+\_\+type@{node\+\_\+content\+\_\+type}}
+\index{node\+\_\+content\+\_\+type@{node\+\_\+content\+\_\+type}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{node\+\_\+content\+\_\+type}{node_content_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less  = std\+::less$<$\+Key\+Type$>$$>$ typedef std\+::pair$<$Key\+Type, Value\+Type$>$ {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::{\bf node\+\_\+content\+\_\+type}}\hypertarget{class_b_s_t_a0aa9307cbee74945dbbbf659c398d4a1}{}\label{class_b_s_t_a0aa9307cbee74945dbbbf659c398d4a1}
+
+
+Represents a pair of key-\/value elements. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{B\+S\+T(const Key\+Type\+Less \&comp=\+Key\+Type\+Less())}{BST(const KeyTypeLess &comp=KeyTypeLess())}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less  = std\+::less$<$\+Key\+Type$>$$>$ {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::{\bf B\+ST} (
+\begin{DoxyParamCaption}
+\item[{const Key\+Type\+Less \&}]{comp = {\ttfamily KeyTypeLess()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{class_b_s_t_a092e33c1b889b35fb95afda49ca1191c}{}\label{class_b_s_t_a092e33c1b889b35fb95afda49ca1191c}
+
+
+Default constructor. 
+
+Creates an empty \hyperlink{class_b_s_t}{B\+ST}. 
+\begin{DoxyParams}{Parameters}
+{\em comp} & The function object necessary to compare keys. \\
+\hline
+\end{DoxyParams}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{B\+S\+T(const B\+S\+T \&other)}{BST(const BST &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less  = std\+::less$<$\+Key\+Type$>$$>$ {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::{\bf B\+ST} (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{class_b_s_t_a9c3d9ab6deb17f9dc3fa19d01a46f8e3}{}\label{class_b_s_t_a9c3d9ab6deb17f9dc3fa19d01a46f8e3}
+
+
+Copy constructor. 
+
+The \hyperlink{class_b_s_t}{B\+ST} copy constructor. This constructor creates a {\itshape deep copy} of the of the original \hyperlink{class_b_s_t}{B\+ST} passed in as argument. By deep copy we mean that new nodes are allocated, and all the key-\/value pairs are replicated on the new tree, preserving the same tree structure. 
+\begin{DoxyParams}{Parameters}
+{\em other} & The \hyperlink{class_b_s_t}{B\+ST} we are copying-\/constructing from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_af21ef870def521a698f5ad9672badd1f}{clone( const B\+T\+Node $\ast$)} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!````~B\+ST@{$\sim$\+B\+ST}}
+\index{````~B\+ST@{$\sim$\+B\+ST}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{$\sim$\+B\+S\+T()}{~BST()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::$\sim${\bf B\+ST} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_b_s_t_a99b5f3bb6438a7cdba827dc77d1d4ce5}{}\label{class_b_s_t_a99b5f3bb6438a7cdba827dc77d1d4ce5}
+
+
+Regular destructor. 
+
+The destructor frees all the memory allocated while creating the \hyperlink{class_b_s_t}{B\+ST}. \index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{B\+S\+T(\+Input\+Itr first, Input\+Itr last, const Key\+Type\+Less \&comp=\+Key\+Type\+Less())}{BST(InputItr first, InputItr last, const KeyTypeLess &comp=KeyTypeLess())}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ template$<$typename Input\+Itr $>$ {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::{\bf B\+ST} (
+\begin{DoxyParamCaption}
+\item[{Input\+Itr}]{first, }
+\item[{Input\+Itr}]{last, }
+\item[{const Key\+Type\+Less \&}]{comp = {\ttfamily KeyTypeLess()}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_b_s_t_a8811bb87594111984e2ae68a88586af2}{}\label{class_b_s_t_a8811bb87594111984e2ae68a88586af2}
+
+
+The range constructor. 
+
+The \hyperlink{class_b_s_t}{B\+ST} range constructor. This constructor creates a new tree inserting key-\/value elements from the range {\ttfamily \mbox{[}first, last)} provided. We assume the range is valid and that each element of the range is of the type \hyperlink{class_b_s_t_a0aa9307cbee74945dbbbf659c398d4a1}{B\+S\+T\+::node\+\_\+content\+\_\+type}. If multiple elements in the range have keys that compare equivalent, only the first instance of the pair key-\/value is inserted.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Itr} & The input iterator to the range we insert from. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em first} & the begining of the range to copy from. \\
+\hline
+{\em last} & the end (exclusive) of the range to copy from. \\
+\hline
+{\em comp} & The function object necessary to compare keys. \\
+\hline
+\end{DoxyParams}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\index{B\+ST@{B\+ST}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{B\+S\+T(std\+::initializer\+\_\+list$<$ node\+\_\+content\+\_\+type $>$ init, const Key\+Type\+Less \&comp=\+Key\+Type\+Less())}{BST(std::initializer_list< node_content_type > init, const KeyTypeLess &comp=KeyTypeLess())}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::{\bf B\+ST} (
+\begin{DoxyParamCaption}
+\item[{std\+::initializer\+\_\+list$<$ {\bf node\+\_\+content\+\_\+type} $>$}]{init, }
+\item[{const Key\+Type\+Less \&}]{comp = {\ttfamily KeyTypeLess()}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_b_s_t_ab07b4e6d6818494bbc892df89ee4daad}{}\label{class_b_s_t_ab07b4e6d6818494bbc892df89ee4daad}
+
+
+The intializer list constructor. 
+
+The \hyperlink{class_b_s_t}{B\+ST} initializer list constructor. This constructor creates a new tree inserting key-\/value elements from the range initializer list {\ttfamily init} provided. We assume the input list is valid and that each element of the list is of the type \hyperlink{class_b_s_t_a0aa9307cbee74945dbbbf659c398d4a1}{B\+S\+T\+::node\+\_\+content\+\_\+type}. If multiple elements in the initialize list have keys that compare equivalent, only the first instance of the pair key-\/value is inserted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em init} & The initializer list to initialize the elements of the \hyperlink{class_b_s_t}{B\+ST} with. \\
+\hline
+{\em comp} & The function object necessary to compare keys. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{B\+ST@{B\+ST}!clear@{clear}}
+\index{clear@{clear}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{clear(\+B\+T\+Node $\ast$\&root)}{clear(BTNode *&root)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ void {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::clear (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+T\+Node} $\ast$\&}]{root}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_b_s_t_a55ef77647f785480d292d2315550f734}{}\label{class_b_s_t_a55ef77647f785480d292d2315550f734}
+
+
+Removes all the elements from the \hyperlink{class_b_s_t}{B\+ST}. 
+
+Recursively deletes all the nodes of the \hyperlink{class_b_s_t}{B\+ST} pointed by {\ttfamily root}. All the allocated memory is freed to the system. The count of nodes is set to zero. 
+\begin{DoxyParams}{Parameters}
+{\em root} & A pointer to the tree we want to operate on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_a6ffadf800779b0f1b1a9742a3bc5cf66}{clear(void)} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!clear@{clear}}
+\index{clear@{clear}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{clear(void)}{clear(void)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less  = std\+::less$<$\+Key\+Type$>$$>$ void {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::clear (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_b_s_t_a6ffadf800779b0f1b1a9742a3bc5cf66}{}\label{class_b_s_t_a6ffadf800779b0f1b1a9742a3bc5cf66}
+
+
+Removes all the elements from the \hyperlink{class_b_s_t}{B\+ST}. 
+
+Removes all the nodes of the \hyperlink{class_b_s_t}{B\+ST}, freeing the memory associated with the \hyperlink{class_b_s_t}{B\+ST}. The count of nodes is set to zero. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_a55ef77647f785480d292d2315550f734}{clear( B\+T\+Node $\ast$ \& )} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!clone@{clone}}
+\index{clone@{clone}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{clone(const B\+T\+Node $\ast$root)}{clone(const BTNode *root)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::{\bf B\+T\+Node} $\ast$ {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::clone (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+T\+Node} $\ast$}]{root}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_b_s_t_af21ef870def521a698f5ad9672badd1f}{}\label{class_b_s_t_af21ef870def521a698f5ad9672badd1f}
+
+
+Creates a copy of a \hyperlink{class_b_s_t}{B\+ST} tree. 
+
+Creates and returns an entire new tree that is a {\itshape deep copy} of the original \hyperlink{class_b_s_t}{B\+ST} passed in as argument. By deep copy we mean that new nodes are allocated, and all the key-\/value pairs are replicated on the new tree, preserving the same tree structure. 
+\begin{DoxyParams}{Parameters}
+{\em root} & A pointer to the root of the tree we want to clone from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the cloned tree. 
+\end{DoxyReturn}
+\index{B\+ST@{B\+ST}!contains@{contains}}
+\index{contains@{contains}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{contains(const B\+T\+Node $\ast$root, const Key\+Type \&key) const }{contains(const BTNode *root, const KeyType &key) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ bool {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::contains (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+T\+Node} $\ast$}]{root, }
+\item[{const Key\+Type \&}]{key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_b_s_t_a3c014718dd218e2ca758af266cc0b787}{}\label{class_b_s_t_a3c014718dd218e2ca758af266cc0b787}
+
+
+Checks whether the \hyperlink{class_b_s_t}{B\+ST} contains a given key. 
+
+Recursively search the {\ttfamily root} for the key provided. Returns true if the key is found, or false otherwise. 
+\begin{DoxyParams}{Parameters}
+{\em root} & A pointer to the tree we want to operate on. \\
+\hline
+{\em key} & The key we are looking for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if key is found in the tree, false otherwise. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_a959aa07758e3ff26890e37db2a31b6b2}{contains( const Key\+Type \& ) const} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!contains@{contains}}
+\index{contains@{contains}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{contains(const Key\+Type \&key) const }{contains(const KeyType &key) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ bool {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::contains (
+\begin{DoxyParamCaption}
+\item[{const Key\+Type \&}]{key}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_b_s_t_a959aa07758e3ff26890e37db2a31b6b2}{}\label{class_b_s_t_a959aa07758e3ff26890e37db2a31b6b2}
+
+
+Checks whether the \hyperlink{class_b_s_t}{B\+ST} contains a given key. 
+
+Returns true if the \hyperlink{class_b_s_t}{B\+ST} contains a given key, or false otherwise. 
+\begin{DoxyParams}{Parameters}
+{\em key} & The key we are looking for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if key is found in the tree, false otherwise. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_a3c014718dd218e2ca758af266cc0b787}{contains( const B\+T\+Node $\ast$ , const Key\+Type \& ) const} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!empty@{empty}}
+\index{empty@{empty}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{empty(void) const }{empty(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less  = std\+::less$<$\+Key\+Type$>$$>$ bool {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::empty (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_b_s_t_a582ec5f3bc333f1e9c1deed3526e6a55}{}\label{class_b_s_t_a582ec5f3bc333f1e9c1deed3526e6a55}
+
+
+Returns true if the \hyperlink{class_b_s_t}{B\+ST} is empty, or false otherwise. 
+
+\index{B\+ST@{B\+ST}!find\+\_\+max@{find\+\_\+max}}
+\index{find\+\_\+max@{find\+\_\+max}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{find\+\_\+max(void) const }{find_max(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ const Value\+Type \& {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::find\+\_\+max (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_b_s_t_a1610824df7207dd077fec30b82174a9e}{}\label{class_b_s_t_a1610824df7207dd077fec30b82174a9e}
+
+
+Returns the value associated with the largest key. 
+
+\index{B\+ST@{B\+ST}!find\+\_\+min@{find\+\_\+min}}
+\index{find\+\_\+min@{find\+\_\+min}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{find\+\_\+min(void) const }{find_min(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ const Value\+Type \& {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::find\+\_\+min (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_b_s_t_a262042430a5671f2964ec55fd0db5887}{}\label{class_b_s_t_a262042430a5671f2964ec55fd0db5887}
+
+
+Returns the value associated with the smallest key. 
+
+\index{B\+ST@{B\+ST}!get\+\_\+smallest\+\_\+leaf@{get\+\_\+smallest\+\_\+leaf}}
+\index{get\+\_\+smallest\+\_\+leaf@{get\+\_\+smallest\+\_\+leaf}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{get\+\_\+smallest\+\_\+leaf(const B\+T\+Node $\ast$root) const }{get_smallest_leaf(const BTNode *root) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ const {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::{\bf B\+T\+Node} $\ast$ {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::get\+\_\+smallest\+\_\+leaf (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+T\+Node} $\ast$}]{root}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_b_s_t_a2da99953436debe2868f93bd18398b11}{}\label{class_b_s_t_a2da99953436debe2868f93bd18398b11}
+
+
+Returns a pointer to the \hyperlink{class_b_s_t}{B\+ST} node with the smallest key value. 
+
+Helper method needed by \hyperlink{class_b_s_t_ab3369784d746d15731edf741729f15ad}{remove()} when the target node has 2 children. 
+\begin{DoxyParams}{Parameters}
+{\em root} & Pointer to the root node of a tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a leaf with the smallest key (left most leaf). 
+\end{DoxyReturn}
+\index{B\+ST@{B\+ST}!inorder@{inorder}}
+\index{inorder@{inorder}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{inorder(const B\+T\+Node $\ast$root, const Unary\+Function \&visit) const }{inorder(const BTNode *root, const UnaryFunction &visit) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ template$<$typename Unary\+Function $>$ void {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::inorder (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+T\+Node} $\ast$}]{root, }
+\item[{const Unary\+Function \&}]{visit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_b_s_t_abbfbc935cb31754a1715cca4490994f8}{}\label{class_b_s_t_abbfbc935cb31754a1715cca4490994f8}
+
+
+Traverses and visits each \hyperlink{class_b_s_t}{B\+ST} node in {\bfseries inorder} fashion. 
+
+Recursively traverses the \hyperlink{class_b_s_t}{B\+ST} in {\bfseries inorder} while applying an unary function to the value field of each node. This strategy is knows as \href{https://en.wikipedia.org/wiki/Visitor_pattern}{\tt {\bfseries the visitor design pattern}}, which enables the client code freedom to specify what to do to each data node, according to application needs. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Unary\+Function} & A function object of the form {\ttfamily std\+::function$<$void( const Value\+Type  \& )$>$}. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em root} & A pointer to the root of the tree we want to traverse. \\
+\hline
+{\em visit} & The function object to be applied to each value stored in the \hyperlink{class_b_s_t}{B\+ST}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_a46608ca07862f7f13cf3520ec6ade82d}{inorder( const Unary\+Function \& ) const} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!inorder@{inorder}}
+\index{inorder@{inorder}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{inorder(const Unary\+Function \&visit) const }{inorder(const UnaryFunction &visit) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ template$<$typename Unary\+Function $>$ void {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::inorder (
+\begin{DoxyParamCaption}
+\item[{const Unary\+Function \&}]{visit}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_b_s_t_a46608ca07862f7f13cf3520ec6ade82d}{}\label{class_b_s_t_a46608ca07862f7f13cf3520ec6ade82d}
+
+
+Traverses and visits each \hyperlink{class_b_s_t}{B\+ST} node in {\bfseries inorder} fashion. 
+
+During the {\bfseries inorder} \hyperlink{class_b_s_t}{B\+ST} traversal the method applies an unary function to the value field of each visited node. This strategy is knows as \href{https://en.wikipedia.org/wiki/Visitor_pattern}{\tt {\bfseries the visitor design pattern}}, which enables the client code freedom to specify what to do to each data node, according to application needs. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Unary\+Function} & A function object of the form {\ttfamily std\+::function$<$void( const Value\+Type  \& )$>$}. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em visit} & The function object to be applied to each value stored in the \hyperlink{class_b_s_t}{B\+ST}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_abbfbc935cb31754a1715cca4490994f8}{inorder( const B\+T\+Node $\ast$ , const Unary\+Function \& ) const} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!insert@{insert}}
+\index{insert@{insert}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{insert(\+B\+T\+Node $\ast$\&root, const Key\+Type \&key, const Value\+Type \&value)}{insert(BTNode *&root, const KeyType &key, const ValueType &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ void {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::insert (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+T\+Node} $\ast$\&}]{root, }
+\item[{const Key\+Type \&}]{key, }
+\item[{const Value\+Type \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_b_s_t_a2caab48e5c6f1400f7b9ae2e11fb1680}{}\label{class_b_s_t_a2caab48e5c6f1400f7b9ae2e11fb1680}
+
+
+Inserts a new pair $<${\ttfamily key},{\ttfamily value}$>$ in the tree. 
+
+Recursively tried to look for the right place to createa and insert a new node with a $<${\ttfamily key},{\ttfamily value}$>$ pair in the \hyperlink{class_b_s_t}{B\+ST} tree if the key is not already stored in the tree. 
+\begin{DoxyParams}{Parameters}
+{\em root} & A pointer to the tree we want to operate on. \\
+\hline
+{\em key} & The key associated with the value we wish to operate on. \\
+\hline
+{\em value} & The value we wish to store in the tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_a809a130ceaa2dbb3a2b077f321675593}{insert(const Key\+Type \&, const Value\+Type \& )} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!insert@{insert}}
+\index{insert@{insert}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{insert(const Key\+Type \&key, const Value\+Type \&value)}{insert(const KeyType &key, const ValueType &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ void {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::insert (
+\begin{DoxyParamCaption}
+\item[{const Key\+Type \&}]{key, }
+\item[{const Value\+Type \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_b_s_t_a809a130ceaa2dbb3a2b077f321675593}{}\label{class_b_s_t_a809a130ceaa2dbb3a2b077f321675593}
+
+
+Inserts a new pair $<${\ttfamily key},{\ttfamily value}$>$ in the tree. 
+
+Creates and inserts a new node with a $<${\ttfamily key},{\ttfamily value}$>$ pair in the \hyperlink{class_b_s_t}{B\+ST} tree if the key is not already stored in the tree. 
+\begin{DoxyParams}{Parameters}
+{\em key} & The key associated with the value we wish to operate on. \\
+\hline
+{\em value} & The value we wish to store in the tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_a2caab48e5c6f1400f7b9ae2e11fb1680}{insert( B\+T\+Node $\ast$ \& , const Key\+Type \& , const Value\+Type \& )} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!operator=@{operator=}}
+\index{operator=@{operator=}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{operator=(const B\+S\+T \&rhs)}{operator=(const BST &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$ \& {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{class_b_s_t_a777c36ccd3b24f144e0603f20f5eac9d}{}\label{class_b_s_t_a777c36ccd3b24f144e0603f20f5eac9d}
+
+
+The copy assignment operator. 
+
+The \hyperlink{class_b_s_t}{B\+ST} copy assignment operator. This operator replaces the current \hyperlink{class_b_s_t}{B\+ST} content with a {\itshape deep copy} of the elements from the {\ttfamily rhs} \hyperlink{class_b_s_t}{B\+ST}. By deep copy we mean that new nodes are allocated, and all the key-\/value pairs are replicated on the new tree, preserving the same tree structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{class_b_s_t}{B\+ST} container to use as data source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily $\ast$this} to enable chained assignments. 
+\end{DoxyReturn}
+\index{B\+ST@{B\+ST}!operator=@{operator=}}
+\index{operator=@{operator=}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{operator=(std\+::initializer\+\_\+list$<$ node\+\_\+content\+\_\+type $>$ ilist)}{operator=(std::initializer_list< node_content_type > ilist)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$ \& {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{std\+::initializer\+\_\+list$<$ {\bf node\+\_\+content\+\_\+type} $>$}]{ilist}
+\end{DoxyParamCaption}
+)}\hypertarget{class_b_s_t_abcafcb893066444795e8145684011457}{}\label{class_b_s_t_abcafcb893066444795e8145684011457}
+
+
+The initializer list assignment operator. 
+
+The \hyperlink{class_b_s_t}{B\+ST} initializer list assignment operator. This operator replaces the current \hyperlink{class_b_s_t}{B\+ST} content with the contents from the intializer list {\ttfamily ilist}. We assume the input list is valid and that each element of the list is of the type \hyperlink{class_b_s_t_a0aa9307cbee74945dbbbf659c398d4a1}{B\+S\+T\+::node\+\_\+content\+\_\+type}. If multiple elements in the initialize list have keys that compare equivalent, only the first instance of the pair key-\/value is inserted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ilist} & The initialize list to use as data source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily $\ast$this} to enable chained assignments. 
+\end{DoxyReturn}
+\index{B\+ST@{B\+ST}!postorder@{postorder}}
+\index{postorder@{postorder}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{postorder(const B\+T\+Node $\ast$root, const Unary\+Function \&visit) const }{postorder(const BTNode *root, const UnaryFunction &visit) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ template$<$typename Unary\+Function $>$ void {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::postorder (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+T\+Node} $\ast$}]{root, }
+\item[{const Unary\+Function \&}]{visit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_b_s_t_a11b5bd16742a542b361eebe5f2baa310}{}\label{class_b_s_t_a11b5bd16742a542b361eebe5f2baa310}
+
+
+Traverses and visits each \hyperlink{class_b_s_t}{B\+ST} node in {\bfseries postorder} fashion. 
+
+Recursively traverses the \hyperlink{class_b_s_t}{B\+ST} in {\bfseries postorder} while applying an unary function to the value field of each node. This strategy is knows as \href{https://en.wikipedia.org/wiki/Visitor_pattern}{\tt {\bfseries the visitor design pattern}}, which enables the client code freedom to specify what to do to each data node, according to application needs. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Unary\+Function} & A function object of the form {\ttfamily std\+::function$<$void( const Value\+Type  \& )$>$}. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em root} & A pointer to the root of the tree we want to traverse. \\
+\hline
+{\em visit} & The function object to be applied to each value stored in the \hyperlink{class_b_s_t}{B\+ST}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_a938be48246fd9b0b81e64d111f2e1a5d}{postorder( const Unary\+Function \& ) const} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!postorder@{postorder}}
+\index{postorder@{postorder}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{postorder(const Unary\+Function \&visit) const }{postorder(const UnaryFunction &visit) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ template$<$typename Unary\+Function $>$ void {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::postorder (
+\begin{DoxyParamCaption}
+\item[{const Unary\+Function \&}]{visit}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_b_s_t_a938be48246fd9b0b81e64d111f2e1a5d}{}\label{class_b_s_t_a938be48246fd9b0b81e64d111f2e1a5d}
+
+
+Traverses and visits each \hyperlink{class_b_s_t}{B\+ST} node in {\bfseries postorder} fashion. 
+
+During the {\bfseries postorder} \hyperlink{class_b_s_t}{B\+ST} traversal the method applies an unary function to the value field of each visited node. This strategy is knows as \href{https://en.wikipedia.org/wiki/Visitor_pattern}{\tt {\bfseries the visitor design pattern}}, which enables the client code freedom to specify what to do to each data node, according to application needs. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Unary\+Function} & A function object of the form {\ttfamily std\+::function$<$void( const Value\+Type  \& )$>$}. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em visit} & The function object to be applied to each value stored in the \hyperlink{class_b_s_t}{B\+ST}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_a11b5bd16742a542b361eebe5f2baa310}{postorder( const B\+T\+Node $\ast$ , const Unary\+Function \& ) const} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!preorder@{preorder}}
+\index{preorder@{preorder}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{preorder(const B\+T\+Node $\ast$root, const Unary\+Function \&visit) const }{preorder(const BTNode *root, const UnaryFunction &visit) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ template$<$typename Unary\+Function $>$ void {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::preorder (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+T\+Node} $\ast$}]{root, }
+\item[{const Unary\+Function \&}]{visit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_b_s_t_a10b4da6797656b7155f92fa7e2be3f1d}{}\label{class_b_s_t_a10b4da6797656b7155f92fa7e2be3f1d}
+
+
+Traverses and visits each \hyperlink{class_b_s_t}{B\+ST} node in {\bfseries preorder} fashion. 
+
+Recursively traverses the \hyperlink{class_b_s_t}{B\+ST} in {\bfseries preorder} while applying an unary function to the value field of each node. This strategy is knows as \href{https://en.wikipedia.org/wiki/Visitor_pattern}{\tt {\bfseries the visitor design pattern}}, which enables the client code freedom to specify what to do to each data node, according to application needs. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Unary\+Function} & A function object of the form {\ttfamily std\+::function$<$void( const Value\+Type  \& )$>$}. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em root} & A pointer to the root of the tree we want to traverse. \\
+\hline
+{\em visit} & The function object to be applied to each value stored in the \hyperlink{class_b_s_t}{B\+ST}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_afafd8425898de634afe1d229420cfbb8}{preorder( const Unary\+Function \& ) const} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!preorder@{preorder}}
+\index{preorder@{preorder}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{preorder(const Unary\+Function \&visit) const }{preorder(const UnaryFunction &visit) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ template$<$typename Unary\+Function $>$ void {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::preorder (
+\begin{DoxyParamCaption}
+\item[{const Unary\+Function \&}]{visit}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_b_s_t_afafd8425898de634afe1d229420cfbb8}{}\label{class_b_s_t_afafd8425898de634afe1d229420cfbb8}
+
+
+Traverses and visits each \hyperlink{class_b_s_t}{B\+ST} node in {\bfseries preorder} fashion. 
+
+During the {\bfseries preorder} \hyperlink{class_b_s_t}{B\+ST} traversal the method applies an unary function to the value field of each visited node. This strategy is knows as \href{https://en.wikipedia.org/wiki/Visitor_pattern}{\tt {\bfseries the visitor design pattern}}, which enables the client code to decouple the algorithm to be applied to each node from the \hyperlink{class_b_s_t}{B\+ST} structure. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Unary\+Function} & A function object of the form {\ttfamily std\+::function$<$void( const Value\+Type  \& )$>$}. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em visit} & The function object to be applied to each value stored in the \hyperlink{class_b_s_t}{B\+ST}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_a10b4da6797656b7155f92fa7e2be3f1d}{preorder( const B\+T\+Node $\ast$ , const Unary\+Function \& ) const} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!remove@{remove}}
+\index{remove@{remove}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{remove(\+B\+T\+Node $\ast$\&root, const Key\+Type \&key)}{remove(BTNode *&root, const KeyType &key)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ void {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+T\+Node} $\ast$\&}]{root, }
+\item[{const Key\+Type \&}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_b_s_t_ab3369784d746d15731edf741729f15ad}{}\label{class_b_s_t_ab3369784d746d15731edf741729f15ad}
+
+
+Removes from the \hyperlink{class_b_s_t}{B\+ST} a node containing the requested key. 
+
+Recursuvely tries to look for and remove from the \hyperlink{class_b_s_t}{B\+ST} a node containing the requested key, if one is found in the tree. The deletion might modifiy the tree structure to preserve the \hyperlink{class_b_s_t}{B\+ST} properties. If the key is not found, nothing happens to the tree. 
+\begin{DoxyParams}{Parameters}
+{\em root} & A pointer to the tree we want to operate on. \\
+\hline
+{\em key} & The key associated with the value we wish to operate on. \\
+\hline
+{\em value} & The value we wish to store in the tree. \\
+\hline
+\end{DoxyParams}
+\index{B\+ST@{B\+ST}!remove@{remove}}
+\index{remove@{remove}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{remove(const Key\+Type \&)}{remove(const KeyType &)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ void {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::remove (
+\begin{DoxyParamCaption}
+\item[{const Key\+Type \&}]{k\+\_\+}
+\end{DoxyParamCaption}
+)}\hypertarget{class_b_s_t_aa9f0f207322311366b9b014755a798ab}{}\label{class_b_s_t_aa9f0f207322311366b9b014755a798ab}
+
+
+Removes from the \hyperlink{class_b_s_t}{B\+ST} a node containing the requested key. 
+
+Removes from the \hyperlink{class_b_s_t}{B\+ST} a node containing the requested key if one is found in the tree. The deletion might modifiy the tree structure to preserve the \hyperlink{class_b_s_t}{B\+ST} properties. If the key is not found, nothing happens to the tree. 
+\begin{DoxyParams}{Parameters}
+{\em key} & The key associated with the value we wish to operate on. \\
+\hline
+{\em value} & The value we wish to store in the tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+remove( B\+T\+Node $\ast$ \& , const Key\+Type \& , const Value\+Type \& ) 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!retrieve@{retrieve}}
+\index{retrieve@{retrieve}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{retrieve(const B\+T\+Node $\ast$root, const Key\+Type \&key, Value\+Type \&value) const }{retrieve(const BTNode *root, const KeyType &key, ValueType &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ bool {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::retrieve (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+T\+Node} $\ast$}]{root, }
+\item[{const Key\+Type \&}]{key, }
+\item[{Value\+Type \&}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_b_s_t_ad4e63b5360a5252606dece4c5972c36d}{}\label{class_b_s_t_ad4e63b5360a5252606dece4c5972c36d}
+
+
+Retrieves in {\ttfamily value} the value associated with the provided key. 
+
+Recursively tries to retrieve from the {\ttfamily root} \hyperlink{class_b_s_t}{B\+ST} the value associated with the provided key, if one is found. The retrieved value is stored in the output reference parameter {\ttfamily value}. 
+\begin{DoxyParams}{Parameters}
+{\em root} & A pointer to the tree we want to operate on. \\
+\hline
+{\em key} & The key we are looking for. \\
+\hline
+{\em value} & The value associated with the target key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if key is found in the tree and the data is retrieved in value, false otherwise. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_ad969e54369b6edee09f68b2b79a22f08}{retrieve( const Key\+Type \& , Value\+Type \& ) const} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!retrieve@{retrieve}}
+\index{retrieve@{retrieve}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{retrieve(const Key\+Type \&key, Value\+Type \&value) const }{retrieve(const KeyType &key, ValueType &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less $>$ bool {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::retrieve (
+\begin{DoxyParamCaption}
+\item[{const Key\+Type \&}]{key, }
+\item[{Value\+Type \&}]{value}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_b_s_t_ad969e54369b6edee09f68b2b79a22f08}{}\label{class_b_s_t_ad969e54369b6edee09f68b2b79a22f08}
+
+
+Retrieves in {\ttfamily value} the value associated with the provided key. 
+
+Retrieves from the \hyperlink{class_b_s_t}{B\+ST} the value associated with the provided key, if one is found. The retrieved value is stored in the output reference parameter {\ttfamily value}. 
+\begin{DoxyParams}{Parameters}
+{\em key} & The key we are looking for. \\
+\hline
+{\em value} & The value associated with the target key we copied into. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if key is found in the tree and the data is retrieved in value, false otherwise. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_b_s_t_ad4e63b5360a5252606dece4c5972c36d}{retrieve( const B\+T\+Node $\ast$ , const Key\+Type \& , Value\+Type \& ) const} 
+\end{DoxySeeAlso}
+\index{B\+ST@{B\+ST}!size@{size}}
+\index{size@{size}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{size(void) const }{size(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less  = std\+::less$<$\+Key\+Type$>$$>$ size\+\_\+t {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_b_s_t_a95dafd989628a5cf95f8e82151bbb432}{}\label{class_b_s_t_a95dafd989628a5cf95f8e82151bbb432}
+
+
+Returns the number of key-\/value elements stored in the \hyperlink{class_b_s_t}{B\+ST}. 
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{B\+ST@{B\+ST}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less  = std\+::less$<$\+Key\+Type$>$$>$ std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os\+\_\+, }
+\item[{const {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$ \&}]{root\+\_\+}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{class_b_s_t_aaf95a8d45e30cd664017a788b0c5193b}{}\label{class_b_s_t_aaf95a8d45e30cd664017a788b0c5193b}
+
+
+Prints out an ascii tree-\/bar representation of the \hyperlink{class_b_s_t}{B\+ST}. 
+
+Sends to the output stream an ascii tree-\/bar representation of the \hyperlink{class_b_s_t}{B\+ST}. Left subtrees appear before right subtrees. Null nodes are represented with {\ttfamily X}. 
+\begin{DoxyParams}{Parameters}
+{\em os\+\_\+} & The output stream to write to. \\
+\hline
+{\em root\+\_\+} & The pointer to the root of the \hyperlink{class_b_s_t}{B\+ST} we wish to visualize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the ostream object to enable further chained operation on the ostream object. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{B\+ST@{B\+ST}!m\+\_\+key\+\_\+less@{m\+\_\+key\+\_\+less}}
+\index{m\+\_\+key\+\_\+less@{m\+\_\+key\+\_\+less}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{m\+\_\+key\+\_\+less}{m_key_less}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less  = std\+::less$<$\+Key\+Type$>$$>$ Key\+Type\+Less {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::m\+\_\+key\+\_\+less\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_b_s_t_a7a6d8e3ed3109602f468ef20d03f733c}{}\label{class_b_s_t_a7a6d8e3ed3109602f468ef20d03f733c}
+
+
+The key comparator function object. 
+
+\index{B\+ST@{B\+ST}!m\+\_\+n\+\_\+nodes@{m\+\_\+n\+\_\+nodes}}
+\index{m\+\_\+n\+\_\+nodes@{m\+\_\+n\+\_\+nodes}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{m\+\_\+n\+\_\+nodes}{m_n_nodes}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less  = std\+::less$<$\+Key\+Type$>$$>$ size\+\_\+t {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::m\+\_\+n\+\_\+nodes\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_b_s_t_a38f358a38c855ebc8bd866f6ae96aa5a}{}\label{class_b_s_t_a38f358a38c855ebc8bd866f6ae96aa5a}
+
+
+The count of nodes stored in the tree. 
+
+\index{B\+ST@{B\+ST}!m\+\_\+root@{m\+\_\+root}}
+\index{m\+\_\+root@{m\+\_\+root}!B\+ST@{B\+ST}}
+\subsubsection[{\texorpdfstring{m\+\_\+root}{m_root}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key\+Type , typename Value\+Type , typename Key\+Type\+Less  = std\+::less$<$\+Key\+Type$>$$>$ {\bf B\+T\+Node}$\ast$ {\bf B\+ST}$<$ Key\+Type, Value\+Type, Key\+Type\+Less $>$\+::m\+\_\+root\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_b_s_t_af2a361060692deacc5be429288eece96}{}\label{class_b_s_t_af2a361060692deacc5be429288eece96}
+
+
+Pointer to the root of the entire tree. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{bst_8h}{bst.\+h}\item 
+include/\hyperlink{bst_8inl}{bst.\+inl}\end{DoxyCompactItemize}
