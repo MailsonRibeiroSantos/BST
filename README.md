@@ -2,8 +2,9 @@
 Autor: Mailson Ribeiro Santos 
 
 Descrição projeto: 
-O projeto consiste na implementação de árvore binária de busca(BST) de forma genérica utilizando template. Temos como interface da nossa árvore os seguintes métodos: 
-BST( KeyTypeLess comp = KeyTypeLess() )
+O projeto consiste na implementação de árvore binária de busca(BST) de forma genérica utilizando template. Temos como interface da nossa árvore os seguintes métodos: <br/>
+<ul>
+<li>BST( KeyTypeLess comp = KeyTypeLess() )</li>
 BST( InputIt first, InputIt last )
 BST( const BST& other ),
 BST( std::initializer_list<T> ilist )
